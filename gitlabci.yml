@@ -1,0 +1,13 @@
+image: docker:git
+services:
+    - docker:dind
+
+stages:
+    - build
+
+docker_build:
+    stage: build
+    script:
+        - git config --global user.email "hanirizo@gmail.com"
+        - git config --global user.name "Hani Rizo"
+        - cat run.txt | sh

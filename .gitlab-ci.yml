@@ -1,0 +1,14 @@
+image: docker:git
+services:
+- docker:dind
+
+stages:
+  - build
+  - test
+  - deploy
+
+jakarta:
+  stage: build
+  script:
+    - sh ./docker_deploy.sh deploy 1 1
+    
